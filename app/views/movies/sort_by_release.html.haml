@@ -1,15 +1,15 @@
--#  This file is app/views/movies/index.html.haml
+-#  This file is app/views/movies/sort_by_title.html.haml
 %h1 All Movies
 
 %table#movies
   %thead
     %tr
-      %th.hilite= link_to 'Movie Title' , update_1_path
+      %th.hilite= link_to 'Movie Title' , root_path
       %th Rating
-      %th= link_to 'Release Date' , update_2_path
+      %th= link_to 'Release Date' , root_path
       %th More Info
   %tbody
-    - @movies.each do |movie|
+    - @movies_sorted.each do |movie|
       %tr
         %td= movie.title 
         %td= movie.rating

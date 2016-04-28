@@ -41,5 +41,19 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+  
+  def sort_by_title
+    @movies = Movie.all 
+    @movies_sorted =  @movies.sort_by do |movie|
+      movie[:title]
+    end
+  end
 
+  def sort_by_release
+    @movies = Movie.all 
+    @movies_sorted =  @movies.sort_by do |movie|
+      movie[:release_date]
+    end
+  end
+  
 end
